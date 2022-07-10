@@ -1,5 +1,4 @@
 let clickHandler = (i) => {
-    console.log(i ,"clicked");
     let aud = new Audio(audio[i]);
     aud.play();
 }
@@ -15,13 +14,7 @@ btns.forEach( (element, index) => {
 });
 
 document.addEventListener("keypress", (e) => {
-    switch (e.key) {
-        case keys[0]:
-            let aud0 = new Audio(audio[0]);
-            aud0.play();
-            break;
-
-        default:
-            break;
+    if(keys.indexOf(e.key) != -1){
+        new Audio(audio[keys.indexOf(e.key)]).play();
     }
 })
